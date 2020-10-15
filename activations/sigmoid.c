@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<math.h>
+#include "sigmoid.h"
 
 void sigmoidForward(float *x, float *y, int len)
 {

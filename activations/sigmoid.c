@@ -7,6 +7,8 @@ void sigmoidForward(float *x, float *y, int len)
         *(y + i) = 1.0 / (1.0 + expf(-*(x + i)));
 }
 
-void sigmoidBackward(float *deltaLossX, float *deltaLossY, float *y, int xLen)
+void sigmoidBackward(float *deltaLoss, float *Loss, float *y, int len)
 {
+    for (int i=0; i<len; i++)
+        *(deltaLoss + i) = *(Loss + i) * (1.0 - *(y + i)) * *(y + i);
 }

@@ -20,3 +20,4 @@ cdef class Sigmoid:
         return(self.y)
 
     def backward():
+        pass

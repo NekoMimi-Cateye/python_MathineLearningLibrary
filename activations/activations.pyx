@@ -10,5 +10,8 @@ DTYPE = np.float32
 ctypedef np.float32_t DTYPE_t
 
 cdef class Sigmoid:
-    cdef np.ndarray x;
     cdef np.ndarray y;
+
+    def forward():
+
+    def backward():

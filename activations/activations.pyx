@@ -23,10 +23,11 @@ cdef class Sigmoid:
 
     def forward(self, np.ndarray x):
         dataLen = x.size
+        dataSize = x.shape()
         x = x.reshape(-1)
-        self.y = forward(x)
-        self.y = self.y.reshape(dataLen)
-        return(self.y)
+        self.y = np.empty(dataLen, dtype=DTYPE)
+        sigmoidForward(x, y)
+        return(self.y.reshape(dataSize))
 
     def backward(self):
         pass
@@ -34,4 +35,5 @@ cdef class Sigmoid:
 #--------------------------------------------------#
 # ACIVATIONS FORWARD FUNCTION
 #--------------------------------------------------#
-cdef sigmoidForward(np.ndarray[DTYPE_t, ndim=1] x):
+cdef sigmoidForward(np.ndarray[DTYPE, ndim=1] x, np.ndarray[DTYPE, ndim=1] y):
+    y = 1 / (1 + np.exp(-x))

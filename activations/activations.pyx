@@ -35,5 +35,5 @@ cdef class Sigmoid:
 #--------------------------------------------------#
 # ACIVATIONS FORWARD FUNCTION
 #--------------------------------------------------#
-cdef sigmoidForward(np.ndarray[DTYPE, ndim=1] x, np.ndarray[DTYPE, ndim=1] y):
+cdef sigmoidForward(np.ndarray[DTYPE_t, ndim=1] x, np.ndarray[DTYPE_t, ndim=1] y):
     y = 1 / (1 + np.exp(-x))

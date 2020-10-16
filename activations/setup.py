@@ -4,7 +4,7 @@ from Cython.Distutils import build_ext
 
 import numpy as np
 
-sourcefiles = ['activations.pyx']
+sourcefiles = ['activations.pyx', 'sigmoid.c']
 setup(
     cmdclass = {'build_ext':build_ext},
     ext_modules = [Extension('Activation', sourcefiles)],

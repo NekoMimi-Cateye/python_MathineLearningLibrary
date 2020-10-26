@@ -7,7 +7,7 @@ from optimizer import sgd as sgd
 
 if __name__ == "__main__":
     lr = 0.1
-    ep = 10000
+    ep = 1000000
     model = mdl.Model()
     model.addLayer(fc.FullConnect(2, 6), True)
     model.addLayer(sig.Sigmoid(6), False)
@@ -16,8 +16,8 @@ if __name__ == "__main__":
     model.addLossFunction(mse.MSE(2))
     model.addOptimizer(sgd.SGD(lr))
 
-    x = np.array([[0, 1]], dtype = float)
-    t = np.array([[0, 1]], dtype = float)
+    x = np.array([[0, 1], [0.1, 0.9]], dtype = float)
+    t = np.array([[1, 0], [0.9, 0.1]], dtype = float)
     
     y = model.predict(x)
     print(y)

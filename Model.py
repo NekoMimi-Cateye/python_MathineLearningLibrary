@@ -51,4 +51,4 @@ class Model:
                 self.optimizer[0].update(self.model[i].weight, self.model[i].deltaLossW)
 
             ##--step5--##
-            self.logLoss[e] = loss
+            self.logLoss[e] += loss

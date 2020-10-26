@@ -5,4 +5,4 @@ class SGD:
         self.learningRate = learningRate
 
     def update(self, weight, lossWeight):
-        weight -= weight * self.learningRate
+        weight -= lossWeight * self.learningRate

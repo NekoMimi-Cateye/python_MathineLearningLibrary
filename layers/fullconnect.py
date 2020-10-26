@@ -1,11 +1,11 @@
 import numpy as np
 class FullConnect:
     def __init__(self, inLen, outLen):
-        self.dataX = np.empty((1, inLen))
-        self.weight = np.empty((inLen, outLen))
-        self.bias = np.empty((1, outLen))
-        self.deltaLossW = np.empty((inLen, outLen))
-        self.deltaLossB = np.empty((1, outLen))
+        self.dataX = np.zeros((1, inLen))
+        self.weight = np.zeros((inLen, outLen))
+        self.bias = np.zeros((1, outLen))
+        self.deltaLossW = np.zeros((inLen, outLen))
+        self.deltaLossB = np.zeros((1, outLen))
 
     def forward(self, data):
         self.dataX = data

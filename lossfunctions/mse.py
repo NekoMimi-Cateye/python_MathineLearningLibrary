@@ -7,7 +7,7 @@ class MSE:
     def forward(self, dataY, dataT):
         self.dataY = dataY
         self.dataT = dataT
-        return np.sum(0.5 * dataY * dataT)
+        return np.average(0.5 * (dataY - dataT) * (dataY - dataT))
 
     def backward(self):
         return self.dataY - self.dataT

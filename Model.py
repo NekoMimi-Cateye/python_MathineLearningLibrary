@@ -28,7 +28,7 @@ class Model:
 
     def backward(self):
         deltaLoss = self.lossFunction[0].backward()
-        for m in self.model[-1:]:
+        for m in self.model[len(self.model)-1:0:-1]:
             deltaLoss = m.backward(deltaLoss)
         
 
@@ -42,7 +42,7 @@ class Model:
 
             ##--step2--## #in production
             loss = self.lossFunction[0].forward(dataY, dataT)
-
+            
             ##--step3--##
             self.backward()
 

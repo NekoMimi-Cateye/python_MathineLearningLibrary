@@ -49,6 +49,7 @@ class Model:
             ##--step4--##
             for i in self.wlayerPointer:
                 self.optimizer[0].update(self.model[i].weight, self.model[i].deltaLossW)
+                self.optimizer[0].update(self.model[i].bias, self.model[i].deltaLossB)
 
             ##--step5--##
             self.logLoss[e] += loss
